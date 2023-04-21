@@ -21,39 +21,32 @@ function playRound(playerSelection, computerSelection) {
     
 
     if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Scissor") {
-        let isGameWon = 0;
-        return `You lose! ${computerSelection} beats ${playerSelection} `;
+        return '0';
     }
 
     else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
-        let isGameWon = 0;
-        return `You lose! ${computerSelection} beats ${playerSelection} `;
+        return '0';
         
     }
 
     else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Rock") {
-        let isGameWon = 0;
-        return `You lose! ${computerSelection} beats ${playerSelection} `;
+        return '0';
     }
 
     else if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
-        let isGameWon = 2;
-        return `It's a tie! `;
+        return '2';
     }
 
     else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Rock") {
-        let isGameWon = 1;
-        return `You win! ${playerSelection} beats ${computerSelection}`;
+        return '1';
     }
 
     else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Paper") {
-        let isGameWon = 1;
-        return `You win! ${playerSelection} beats ${computerSelection} `;
+        return '1';
     }
 
     else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Scissor") {
-        let isGameWon = 1;
-        return `You win! ${playerSelection} beats ${computerSelection} `;
+        return '1';
     }
 
 }
@@ -61,22 +54,37 @@ function playRound(playerSelection, computerSelection) {
 function game(playRound) {
     let winCounter = 0;
     let loseCounter = 0;
+    let isGameWon = 0;
+    
     for (let i = 1; i<=5; i++) {
         let playerSelection = prompt("What's your choice? (Rock, Paper, Scissor)? ");
         let computerSelection = getComputerChoice();
-        playRound(playerSelection, computerSelection)
-        switch (isGameWon) {
-            case 0:
-                loseCounter += 1;
-            case 1:
-                winCounter += 1;
-            case 2:
-                loseCounter += 1;
-                winCounter += 1;
+        result = playRound(playerSelection, computerSelection)
+        // console.log(playRound(playerSelection, computerSelection))
+        switch (result) {
+            case '0':
+                loseCounter++;
+                console.log(`You lose! ${computerSelection} beats ${playerSelection} `);
+                break;
+
+
+            case '1':
+                winCounter++;
+                console.log(`You win! ${playerSelection} beats ${computerSelection} `);
+                break;
+
+            case '2':
+                loseCounter++;
+                winCounter++;
+                console.log(`It's a tie! `);
+                break;
 
             default:
-                console.log("Error")
+                console.log("Error");
+                break;
         }
+        console.log(`Your win count is ${winCounter}`);
+        console.log(`Your lose count is ${loseCounter}`);
         
     }
 
@@ -88,4 +96,10 @@ function game(playRound) {
     }
 }
 
+console.log(game(playRound))
 
+
+
+// `You lose! ${computerSelection} beats ${playerSelection} `;
+//  `It's a tie! `;
+// `You win! ${playerSelection} beats ${computerSelection} `;
