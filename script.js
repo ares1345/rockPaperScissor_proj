@@ -26,7 +26,6 @@ function playRound(playerSelection, computerSelection) {
 
     else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
         return '0';
-        
     }
 
     else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Rock") {
@@ -56,9 +55,13 @@ function game(playRound) {
     let loseCounter = 0;
     let isGameWon = 0;
     
+
+
     for (let i = 1; i<=5; i++) {
         let playerSelection = prompt("What's your choice? (Rock, Paper, Scissor)? ");
         let computerSelection = getComputerChoice();
+
+
         result = playRound(playerSelection, computerSelection)
         // console.log(playRound(playerSelection, computerSelection))
         switch (result) {
@@ -66,7 +69,6 @@ function game(playRound) {
                 loseCounter++;
                 console.log(`You lose! ${computerSelection} beats ${playerSelection} `);
                 break;
-
 
             case '1':
                 winCounter++;
@@ -83,11 +85,15 @@ function game(playRound) {
                 console.log("Error");
                 break;
         }
+
+
         console.log(`Your win count is ${winCounter}`);
         console.log(`Your lose count is ${loseCounter}`);
         
     }
 
+
+    
     if (winCounter > loseCounter) {
         return(`You won the game! `)
     }
