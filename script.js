@@ -18,32 +18,34 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-    if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
-        return `You lose! ${computerSelection} beats ${playerSelection} `
-    }
+    
 
-    else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Scissor") {
-        return `You lose! ${computerSelection} beats ${playerSelection} `
-    }
-
-    else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Rock") {
-        return `You lose! ${computerSelection} beats ${playerSelection} `
-    }
-
-    else if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
-        return `It's a tie! `
-    }
-
-    else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Rock") {
-        return `You win! ${playerSelection} beats ${computerSelection}`
-    }
-
-    else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Paper") {
-        return `You win! ${playerSelection} beats ${computerSelection}`
+    if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Scissor") {
+        return `You lose! ${computerSelection} beats ${playerSelection} `;
     }
 
     else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
-        return `You win! ${playerSelection} beats ${computerSelection}`
+        return `You lose! ${computerSelection} beats ${playerSelection} `;
+    }
+
+    else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Rock") {
+        return `You lose! ${computerSelection} beats ${playerSelection} `;
+    }
+
+    else if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
+        return `It's a tie! `;
+    }
+
+    else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Rock") {
+        return `You win! ${playerSelection} beats ${computerSelection}`;
+    }
+
+    else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Paper") {
+        return `You win! ${playerSelection} beats ${computerSelection} `;
+    }
+
+    else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Scissor") {
+        return `You win! ${playerSelection} beats ${computerSelection} `;
     }
 
 }
