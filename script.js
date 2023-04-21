@@ -19,23 +19,37 @@ function getComputerChoice() {
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`
+        return `You lose! ${computerSelection} beats ${playerSelection} `
     }
 
     else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Scissor") {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`
+        return `You lose! ${computerSelection} beats ${playerSelection} `
     }
 
     else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Rock") {
-        return `You Lose! ${computerSelection} beats ${playerSelection}`
+        return `You lose! ${computerSelection} beats ${playerSelection} `
     }
 
-    
+    else if (playerSelection.toUpperCase() == computerSelection.toUpperCase()) {
+        return `It's a tie! `
+    }
 
+    else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Rock") {
+        return `You win! ${playerSelection} beats ${computerSelection}`
+    }
 
+    else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Paper") {
+        return `You win! ${playerSelection} beats ${computerSelection}`
+    }
 
-
-
-
+    else if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
+        return `You win! ${playerSelection} beats ${computerSelection}`
+    }
 
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
+
+
