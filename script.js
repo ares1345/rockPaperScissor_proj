@@ -1,4 +1,4 @@
-let computerSelection = function getComputerChoice() {
+function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
     switch (randomNum) {
         case 1:
@@ -17,7 +17,25 @@ let computerSelection = function getComputerChoice() {
 
 }
 
-for (let i = 1; i<=10; i++) {
-    console.log(computerSelection())
-}
+function playRound(playerSelection, computerSelection) {
+    if (playerSelection.toUpperCase() == "ROCK" && computerSelection == "Paper") {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
+    }
 
+    else if (playerSelection.toUpperCase() == "PAPER" && computerSelection == "Scissor") {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
+    }
+
+    else if (playerSelection.toUpperCase() == "SCISSOR" && computerSelection == "Rock") {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`
+    }
+
+    
+
+
+
+
+
+
+
+}
