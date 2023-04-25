@@ -5,9 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissor</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+
+    <style>
+        body {
+            background-color: rgb(12, 9, 31);
+            display:flex; flex-direction:column; 
+            justify-content:center;
+            min-height: 100vh;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .container {
+            display: flex;
+            align-self: center;
+            justify-content: center;
+            gap: 35px;
+        }
+
+        button{
+            border: 2px solid black;
+            border-radius: 10px;
+            font-size: 35px;
+            width: 150px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <button class="rock" type="button" value="rock">Rock</button>
+        <button class="paper" type="button" value="paper">Paper</button>
+        <button class="scissor" type="button" value="scissor">Scissor</button>
+
+    </div>
 </body>
 </html>

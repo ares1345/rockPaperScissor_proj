@@ -1,3 +1,20 @@
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissor = document.querySelector('.scissor');
+
+rock.addEventListener('click', () => {
+    console.log(playRound(rock.value, getComputerChoice()))
+})
+
+paper.addEventListener('click', () => {
+    console.log(playRound(paper.value, getComputerChoice()))
+})
+
+scissor.addEventListener('click', () => {
+    console.log(playRound(scissor.value, getComputerChoice()))
+})
+
+
 function getComputerChoice() {
     let randomNum = Math.floor(Math.random() * 3) + 1;
     switch (randomNum) {
@@ -57,7 +74,87 @@ function game(playRound) {
     
 
 
-    for (let i = 1; i<=5; i++) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* for (let i = 1; i<=5; i++) {
         let playerSelection = prompt("What's your choice? (Rock, Paper, Scissor)? ");
         let computerSelection = getComputerChoice();
 
@@ -90,7 +187,7 @@ function game(playRound) {
         console.log(`Your win count is ${winCounter}`);
         console.log(`Your lose count is ${loseCounter}`);
         
-    }
+    } */
 
 
     
