@@ -1,18 +1,53 @@
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissor = document.querySelector('.scissor');
+const buttons = document.querySelectorAll('button');
+const result = document.querySelector('.result')
 
-rock.addEventListener('click', () => {
-    console.log(playRound(rock.value, getComputerChoice()))
-})
+buttons.forEach((button) => {
 
-paper.addEventListener('click', () => {
-    console.log(playRound(paper.value, getComputerChoice()))
-})
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', () => {
+        switch(playRound(rock.value, getComputerChoice())) {
+                    case '0':
+                        result.textContent = 'You have lost! ';
+                        break;
+                    case '1':
+                        result.textContent = 'You won! ';
+                        break;
+                    case '2':
+                        result.textContent = 'Its a tie! '
+                        break;
 
-scissor.addEventListener('click', () => {
-    console.log(playRound(scissor.value, getComputerChoice()))
-})
+
+                }
+            })
+    });
+  
+
+
+
+
+// const rock = document.querySelector('.rock');
+// const paper = document.querySelector('.paper');
+// const scissor = document.querySelector('.scissor');
+// const result = document.querySelector('.result')
+
+// rock.addEventListener('click', () => {
+//     switch(playRound(rock.value, getComputerChoice())) {
+//         case '0':
+//             result.textContent = 'You have lost! '
+//             break;
+//         case '1':
+//             result.te
+
+//     }
+// })
+
+// paper.addEventListener('click', () => {
+//     console.log(playRound(paper.value, getComputerChoice()))
+// })
+
+// scissor.addEventListener('click', () => {
+//     console.log(playRound(scissor.value, getComputerChoice()))
+// })
 
 
 function getComputerChoice() {
